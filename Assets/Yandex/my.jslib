@@ -6,7 +6,7 @@ mergeInto(LibraryManager.library, {
 
   ShowAdv: function()
   {
-ysdk.adv.showFullscreenAdv({
+YaGames.init().then(ysdk => ysdk.adv.showFullscreenAdv({
     callbacks: {
     	onOpen: () => {
           console.log('Video ad open.');
@@ -21,12 +21,12 @@ ysdk.adv.showFullscreenAdv({
           // some action on error
         }
     }
-})
+}))
 
   },
 
   AddCoinsExtern: function(){
-ysdk.adv.showRewardedVideo({
+YaGames.init().then(ysdk => ysdk.adv.showRewardedVideo({
     callbacks: {
         onOpen: () => {
           console.log('Video ad open.');
@@ -44,7 +44,7 @@ ysdk.adv.showRewardedVideo({
           console.log('Error while open video ad:', e);
         }
     }
-})
+}))
   },
 
 
