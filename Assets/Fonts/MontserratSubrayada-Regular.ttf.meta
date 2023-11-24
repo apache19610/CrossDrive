@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 8986f25ef5cd25947bbd5b27b21e6e55
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Montserrat Subrayada
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9119fdf2eddd7734483686add6031821, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
