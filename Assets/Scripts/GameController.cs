@@ -62,11 +62,11 @@ public class GameController : MonoBehaviour
             StopCoroutine(leftCars);
             StopCoroutine(rightCars);
             StopCoroutine(upCars);
-            nowScore.text = "<color=#FF0B00>score:</color> " + CarController.countCars.ToString();
+            nowScore.text = "<color=#FF0B00>Ñ÷¸ò:</color> " + CarController.countCars.ToString();
             if (PlayerPrefs.GetInt("Score")< CarController.countCars)
             
                 PlayerPrefs.SetInt("Score", CarController.countCars);
-                topScore.text = "<color=#FF0B00>Top:</color> " + PlayerPrefs.GetInt("Score").ToString();
+                topScore.text = "<color=#FF0B00>Ëó÷øèé ñ÷¸ò:</color> " + PlayerPrefs.GetInt("Score").ToString();
                 PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CarController.countCars);
                 coinsCount.text = PlayerPrefs.GetInt("Coins").ToString();
             
