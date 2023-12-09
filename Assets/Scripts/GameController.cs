@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    [DllImport("__Internal")]
+    private static extern void SetToLeaderBoard(int value);
     public GameObject[] maps;
     public bool isMainScene;
     public GameObject[] cars;
@@ -14,6 +17,7 @@ public class GameController : MonoBehaviour
     private Coroutine bottomCars, leftCars, rightCars, upCars;
     private bool isLoseOnce;
     public Text nowScore, topScore, coinsCount;
+    int TopScore;
     public GameObject horn;
     public AudioSource turnSignal;
 
@@ -66,8 +70,10 @@ public class GameController : MonoBehaviour
             if (PlayerPrefs.GetInt("Score")< CarController.countCars)
             
                 PlayerPrefs.SetInt("Score", CarController.countCars);
-                topScore.text = "<color=#FF0B00>Ћучший счЄт:</color> " + PlayerPrefs.GetInt("Score").ToString();
-                PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CarController.countCars);
+            TopScore = PlayerPrefs.GetInt("Score");
+                topScore.text = "<color=#FF0B00>Ћучший счЄт:</color> " + TopScore;
+            SetToLeaderBoard(TopScore);
+            PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + CarController.countCars);
                 coinsCount.text = PlayerPrefs.GetInt("Coins").ToString();
             
             canvasLosePanel.SetActive(true);

@@ -47,5 +47,12 @@ YaGames.init().then(ysdk => ysdk.adv.showRewardedVideo({
 }))
   },
 
+SetToLeaderBoard:function(value)
+{
+ysdk.getLeaderboards()
+  .then(lb => {
+    lb.setLeaderboardScore('TopScore', value);
+  });
+},
 
 });

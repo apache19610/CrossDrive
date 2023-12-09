@@ -53,7 +53,7 @@ public class CarController : MonoBehaviour
 
     private void Update()
     {
-#if UNITY_EDITOR
+#if UNITY_WEBGL
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
 #else
         if (Input.touchCount == 0)
@@ -67,7 +67,7 @@ public class CarController : MonoBehaviour
         {
             string carName = hit.transform.gameObject.name;
 
-#if UNITY_EDITOR
+#if UNITY_WEBGL
             if (Input.GetMouseButtonDown(0) && !isMovingFast && gameObject.name == carName)
             {
 #else
